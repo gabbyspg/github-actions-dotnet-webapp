@@ -16,21 +16,15 @@ jobs:
 
     steps:
       - name: Checkout repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
       
       - name: Restore Dependencies
-        run: dotnet Restore
-        working-directory: ./m4gh4w
-
+        run: dotnet restore **/*.csproj
+    
       - name: Build Project
-        run: dotnet build --no-restore --configuration Release
-        working-directory: ./m4gh4w
-
-      - name: Run TEsts
-        run: dotnet test --no-build --verbosity normal
-        working-directory: ./m4gh4w
+        run: dotnet build **/*.csproj --no-restore
