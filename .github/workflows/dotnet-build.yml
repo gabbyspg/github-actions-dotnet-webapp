@@ -27,7 +27,7 @@ jobs:
         run: dotnet Restore
 
       - name: Build Project
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build --no-restore --configuration Release ./m4gh4w
 
       - name: Run TEsts
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --no-build --verbosity normal ./m4gh4w
