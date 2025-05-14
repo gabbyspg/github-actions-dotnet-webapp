@@ -24,10 +24,10 @@ jobs:
           dotnet-version: '8.0.x'
       
       - name: Restore Dependencies
-        uses: dotnet Restore
+        run: dotnet Restore
 
       - name: Build Project
-        uses: dotnet build --no-restore --configuration Release
+        run: dotnet build --no-restore --configuration Release
 
       - name: Run TEsts
-        uses: dotnet test --no-build --verbosity normal
+        run: dotnet test --no-build --verbosity normal
